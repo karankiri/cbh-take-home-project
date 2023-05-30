@@ -9,3 +9,15 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+The function had 3 main use cases which I've simplified
+
+1. Return TRIVIAL_PARTITION_KEY if no data passed
+2. Return partitionKey if it's passed in event and it's within character limit
+3. Return new generated partitionKey if no partitionKey is passed or it's above character limit
+
+Steps I took to simplify the functions
+
+- Moved the constants at top, this could very well be moved to constants file
+- Added early return for no data case
+- Used ternary operator and optional chaining
